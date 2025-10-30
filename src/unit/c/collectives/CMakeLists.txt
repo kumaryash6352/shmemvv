@@ -22,6 +22,7 @@ add_executable(c_shmem_fcollectmem c_shmem_fcollectmem.c ${SOURCES})
 add_executable(c_shmem_reduce c_shmem_reduce.c ${SOURCES})
 add_executable(c_shmem_sync_all c_shmem_sync_all.c ${SOURCES})
 add_executable(c_shmem_team_sync c_shmem_team_sync.c ${SOURCES})
+add_executable(c_shmem_collectives_stress c_shmem_collectives_stress.c ${SOURCES})
 
 # --- Set the output directory for the executables
 set_target_properties(
@@ -38,6 +39,7 @@ set_target_properties(
   c_shmem_reduce
   c_shmem_sync_all
   c_shmem_team_sync
+  c_shmem_collectives_stress
   
   PROPERTIES
   # TODO: come up with a better way to organize unit tests bins
@@ -58,6 +60,7 @@ target_include_directories(c_shmem_fcollectmem PRIVATE src/include)
 target_include_directories(c_shmem_reduce PRIVATE src/include)
 target_include_directories(c_shmem_sync_all PRIVATE src/include)
 target_include_directories(c_shmem_team_sync PRIVATE src/include)
+target_include_directories(c_shmem_collectives_stress PRIVATE src/include)
 
 # --- Link any necessary libraries to each target (replace `your_library` with actual libraries if any)
 target_link_libraries(c_shmem_alltoall)
@@ -73,3 +76,4 @@ target_link_libraries(c_shmem_fcollectmem)
 target_link_libraries(c_shmem_reduce)
 target_link_libraries(c_shmem_sync_all)
 target_link_libraries(c_shmem_team_sync)
+target_link_libraries(c_shmem_collectives_stress)
