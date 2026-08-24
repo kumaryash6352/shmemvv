@@ -20,6 +20,7 @@ endif()
 # ---- Global language test options
 option(DISABLE_ALL_C_TESTS "Disable all C language tests" OFF)
 option(DISABLE_ALL_C11_TESTS "Disable all C11 language tests" OFF)
+option(DISABLE_ALL_SHMEMG_TESTS "Disable all SHMEMG tests" OFF)
 
 # ---- Test category options
 # These options allow you to selectively disable specific test categories
@@ -29,6 +30,7 @@ option(DISABLE_ALL_C11_TESTS "Disable all C11 language tests" OFF)
 # Global language options:
 # DISABLE_ALL_C_TESTS - Disable all C language tests
 # DISABLE_ALL_C11_TESTS - Disable all C11 language tests
+# DISABLE_ALL_SHMEMG_TESTS - Disable all SHMEMG tests
 #
 # Available options for C tests:
 # DISABLE_C_ATOMICS - Disable C atomic memory operation tests
@@ -55,6 +57,9 @@ option(DISABLE_ALL_C11_TESTS "Disable all C11 language tests" OFF)
 # DISABLE_C11_SIGNALING - Disable C11 signaling operation tests
 # DISABLE_C11_TEAMS - Disable C11 teams management tests
 # DISABLE_C11_THREADS - Disable C11 thread support tests
+#
+# Available options for SHMEMG tests:
+# DISABLE_SHMEMG_RMA - Disable SHMEMG remote memory access tests
 
 # ---- Check for dlfcn.h
 # include(CheckIncludeFile)
