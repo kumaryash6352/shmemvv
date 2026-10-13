@@ -58,3 +58,19 @@ target_link_libraries(c11_shmem_iput)
 target_link_libraries(c11_shmem_iget)
 target_link_libraries(c11_shmem_put_nbi)
 target_link_libraries(c11_shmem_get_nbi)
+
+# --- OpenSHMEM 1.6 coverage
+if(SHMEMVV_HAVE_IBPUT)
+  add_executable(c11_shmem_ibput ../../c/rma/c_shmem_ibput.c ${SOURCES})
+  target_compile_definitions(c11_shmem_ibput PRIVATE API_USE_GENERICS)
+  set_target_properties(c11_shmem_ibput PROPERTIES
+    C_STANDARD 11 C_STANDARD_REQUIRED YES
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/rma)
+endif()
+if(SHMEMVV_HAVE_IBGET)
+  add_executable(c11_shmem_ibget ../../c/rma/c_shmem_ibget.c ${SOURCES})
+  target_compile_definitions(c11_shmem_ibget PRIVATE API_USE_GENERICS)
+  set_target_properties(c11_shmem_ibget PROPERTIES
+    C_STANDARD 11 C_STANDARD_REQUIRED YES
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/rma)
+endif()
